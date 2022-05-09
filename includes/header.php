@@ -5,7 +5,7 @@ include('includes/dbconnection.php');
 ?>
 <style type="text/css">
     #top{
-        background-color: rgb(5, 17, 108);
+        background: #063146;
     }
 </style>
 <nav id="top" class="navbar navbar-custom navbar-fixed-top" role="navigation">

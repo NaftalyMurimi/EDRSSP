@@ -104,7 +104,7 @@ if(isset($_POST['submit'])&&$_FILES['userfile']['size']>0)
  
   <div class="col-md-8">
   <label for="phone" class="form-label">Description:</label>
-  <textarea class="form-control" maxlength="240" placeholder="Brief summary of your Project" id="" style="height: 100px" name="description"></textarea>
+  <textarea class="form-control" maxlength="500" placeholder="Brief summary of your Project" id="" style="height: 100px" name="description"></textarea>
   
 </div>
 

@@ -9,7 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <style type="text/css">
         nav{
-           background-color: rgb(5, 17, 108) ;
+          background: #063146;
         }
     </style>
   
@@ -23,7 +23,7 @@
     </li>
     
     <li class="nav-item">
-    <a class="nav-link" href="#">Projects</a>
+    <a class="nav-link" href="projects.php">Projects</a>
     </li>
     
     </ul>
