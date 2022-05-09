@@ -93,7 +93,7 @@ while ($row=mysqli_fetch_array($ret)) {
               		<td><?php  echo $row['Title'];?></td>
                   <td><?php  echo $row['Description'];?></td>
                   <td><?php  echo $row['File'];?></td>
-                  <td><?php  echo $row['FileSize'];?></td>
+                  <td><?php  echo $row['FileSize']. " Kb";?></td>
                   <td><a href="viewFILES.php?delid=<?php echo $row['ID'];?>">Delete</a>
                 </tr>
 <?php 
