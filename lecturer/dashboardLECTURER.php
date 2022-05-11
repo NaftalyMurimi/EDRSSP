@@ -2,7 +2,7 @@
 session_start();
 error_reporting(0);
 include('../includes/dbconnection.php');
-if (strlen($_SESSION['studentuid']==0)) {
+if (strlen($_SESSION['lecuid']==0)) {
   header('location:../logout.php');
   } else{
 
@@ -14,7 +14,7 @@ if (strlen($_SESSION['studentuid']==0)) {
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Student's- Dashboard</title>
+	<title>Lecturer's- Dashboard</title>
 	<link href="../css/bootstrap.min.css" rel="stylesheet">
 	<link href="../css/font-awesome.min.css" rel="stylesheet">
 	<link href="../css/datepicker3.css" rel="stylesheet">
@@ -30,7 +30,7 @@ if (strlen($_SESSION['studentuid']==0)) {
 <body>
 	
 	<?php include_once('../includes/header.php');?>
-	<?php include_once('../includes/sidebarSTUDENT.php');?>
+	<?php include_once('../includes/sidebarLEC.php');?>
 		
 	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
 		<div class="row">
@@ -68,4 +68,3 @@ if (strlen($_SESSION['studentuid']==0)) {
 		
 </body>
 </html>
-<?php } ?>

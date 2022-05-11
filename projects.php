@@ -18,23 +18,19 @@ $res=mysqli_query($con,$sql) or die(mysqli_error($con));
         nav, body{
           background: #063146;
         }
+        @media only screen and (max-width: 790px) {
+     .seen { 
+        display: none;
+    }
+    .see { 
+        height:310px;
+    }
     </style>
   
 </head>
 <body>
     <!-- Navigation bar -->
-    <nav>
-    <ul class="nav justify-content-center">
-    <li class="nav-item">
-    <a class="nav-link active" aria-current="page" href="index.php">Home</a>
-    </li>
-    
-    <li class="nav-item">
-    <a class="nav-link" href="projects.php">Projects</a>
-    </li>
-    
-    </ul>
-    </nav>
+    <?php include_once('includes/nav.php');?>
     <!-- search bar here -->
     
      <div class="hold">
@@ -48,11 +44,21 @@ $res=mysqli_query($con,$sql) or die(mysqli_error($con));
 <!-- display the projects here -->
 
 <div class="hold">
+    <table class="table table-striped bg-white table-hover seen">
+        <tr>
+            <th>S No.</th>
+            <th>Title</th>
+            <th>Description</th>
+            
+            <th>FileSize</th>
+            <th>Author</th>
+            <th>Action</th>
+        </tr>
 <?php
 while($row=mysqli_fetch_assoc($res))
 {
   
-    echo "<div class='soc-track s100 home-soc-100'>";
+    echo "<div class='soc-track s100 home-soc-100 see'>";
     echo "<h5>".$row['File']."</h5>";
     
     
@@ -64,7 +70,21 @@ while($row=mysqli_fetch_assoc($res))
 
         
     
-    echo "</div>";
+    // echo "</div>";
+echo "</td><td>";
+echo $row['id'];
+echo "</td><td>";
+echo $row['File'];
+echo "</td><td>";
+echo $row['Description'];
+echo "</td><td>";
+echo $row['FileSize'];
+echo "</td><td>";
+echo $row['Author'];
+echo "
+<td><a href=\"User/delete.php?data=".$row['id']."\">Download</a></td>
+</tr>";
+
     
    
 }

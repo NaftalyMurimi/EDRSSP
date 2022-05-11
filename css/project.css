@@ -18,6 +18,7 @@ transition: all 0.2s ease;
 	  width:100%; 
 	  max-width:1095px; 
 	margin: 0 auto; flex-wrap: wrap;
+	
 }
 
 img{

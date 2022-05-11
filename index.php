@@ -16,23 +16,15 @@
 </head>
 <body>
     <!-- Navigation bar -->
-    <nav>
-    <ul class="nav justify-content-center">
-    <li class="nav-item">
-    <a class="nav-link active" aria-current="page" href="#">Home</a>
-    </li>
-    
-    <li class="nav-item">
-    <a class="nav-link" href="projects.php">Projects</a>
-    </li>
-    
-    </ul>
-    </nav>
+    <?php include_once('includes/nav.php');?>
 
     <!-- main image & intro text -->
   <section id="intro">
     <div class="container-lg">
       <div class="row g-4 justify-content-center align-items-center">
+        <div class="col-md-5 text-center d-none d-md-block">
+          <img src="assets/ebook.png" class="img-fluid" alt="ebook">
+        </div>
         <div class="col-md-5 text-center text-md-start">
           <h1>
             <div class="display-4">EDRSSP</div>
@@ -42,9 +34,7 @@
           <a href="student/login.php" class="btn btn-secondary btn-lg">Student</a>
           <a href="#pricing" class="btn btn-info btn-lg">Lecturer</a>
         </div>
-        <div class="col-md-5 text-center d-none d-md-block">
-          <img src="assets/ebook.png" class="img-fluid" alt="ebook">
-        </div>
+        
       </div>
     </div>
   </section>
