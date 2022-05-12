@@ -1,7 +1,13 @@
-<?php
-$con=mysqli_connect("localhost", "root", "", "edrssp");
-if(mysqli_connect_errno()){
-echo "Connection Fail".mysqli_connect_error();
+<!--  -->
+  <?php
+date_default_timezone_set("Africa/Nairobi");
+$con= mysqli_connect("localhost","root","");
+if($con)
+{
+    mysqli_select_db($con,"edrssp");
 }
+ else {
+     echo "could not connect to the database".die(mysqli_error($con));
+}
+?>
 
-  ?>

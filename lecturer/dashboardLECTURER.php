@@ -68,3 +68,4 @@ if (strlen($_SESSION['lecuid']==0)) {
 		
 </body>
 </html>
+<?php }?>

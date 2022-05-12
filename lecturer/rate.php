@@ -72,7 +72,8 @@ if (strlen($_SESSION['lecuid']==0)) {
             <div class="col-md-12">
                <?php
 $userid=$_SESSION['lecuid'];
-$ret=mysqli_query($con,"select * from lecturer where ID='$userid'");
+$fileid=$_SESSION['id'];
+$ret=mysqli_query($con,"select * from documents where ID='$id'");
 $cnt=1;
 while ($row=mysqli_fetch_array($ret)) {
 
