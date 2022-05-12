@@ -2,27 +2,7 @@
 session_start();
 error_reporting(0);
 include('../includes/dbconnection.php');
-if (strlen($_SESSION['lecuid']==0)) {
-  header('location:logout.php');
-  } else{
-    if(isset($_POST['submit']))
-  {
-    $userid=$_SESSION['lecuid'];
-    $author=$_POST['author'];
-    $file=$_POST['file'];
-    $rating=$_POST['rating'];
-    
-
-     $query=mysqli_query($con, "UPDATE `documents` SET `Author`='$author',`File`='$file',`Rating`='$rating' where id ='$userid'");
-    if ($query) {
-    $msg="Project Rating has been Successful.";
-  }
-  else
-    {
-      $msg="Something Went Wrong. Please try again.";
-    }
-  }
-  ?>
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -70,14 +50,7 @@ if (strlen($_SESSION['lecuid']==0)) {
     echo $msg;
   }  ?> </p>
             <div class="col-md-12">
-               <?php
-$userid=$_SESSION['lecuid'];
-$fileid=$_SESSION['id'];
-$ret=mysqli_query($con,"select * from documents where ID='$id'");
-$cnt=1;
-while ($row=mysqli_fetch_array($ret)) {
-
-?> 
+             
               <form role="form" method="post" action="">
                 <div class="form-group">
                   <label>Author</label>
@@ -102,13 +75,13 @@ while ($row=mysqli_fetch_array($ret)) {
                 
                 
                 </div>
-                <?php } ?>
+               
               </form>
             </div>
           </div>
         </div><!-- /.panel-->
       </div><!-- /.col-->
-      <?php include_once('includes/footer.php');?>
+     
     </div><!-- /.row -->
   </div><!--/.main-->
   
@@ -123,4 +96,3 @@ while ($row=mysqli_fetch_array($ret)) {
   
 </body>
 </html>
-<?php }  ?>
