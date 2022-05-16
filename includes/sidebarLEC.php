@@ -29,7 +29,7 @@ $name=$row['Lecturer_name'];
         <ul class="nav menu">
             <li class="active"><a href="#"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
                      
-           <li class=""><a href="addFILE.php"><em class="fa fa-calendar">&nbsp;</em>Submit Sample</a></li>
+           <li class=""><a href="sampleUPLOAD.php"><em class="fa fa-calendar">&nbsp;</em>Submit Sample</a></li>
 
            <li class=""><a href="viewfiles.php"><em class="fa fa-calendar">&nbsp;</em>View Files</a></li>
            

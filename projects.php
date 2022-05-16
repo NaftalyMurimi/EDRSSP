@@ -15,15 +15,8 @@ $res=mysqli_query($con,$sql) or die(mysqli_error($con));
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/project.css">
     <style type="text/css">
-        nav, body{
-          background: #063146;
-        }
-        @media only screen and (max-width: 790px) {
-     .seen { 
-        display: none;
-    }
-    .see { 
-        height:310px;
+        a{
+        text-decoration: none;
     }
     </style>
   
@@ -43,8 +36,9 @@ $res=mysqli_query($con,$sql) or die(mysqli_error($con));
  
 <!-- display the projects here -->
 
+
 <div class="hold">
-    <table class="table table-striped bg-white table-hover seen">
+    <table class="table table-striped bg-white table-hover " style="margin-top: 20px;">
         <tr>
             <th>S No.</th>
             <th>Title</th>
@@ -58,15 +52,7 @@ $res=mysqli_query($con,$sql) or die(mysqli_error($con));
 while($row=mysqli_fetch_assoc($res))
 {
   
-    echo "<div class='soc-track s100 home-soc-100 see'>";
-    echo "<h5>".$row['File']."</h5>";
     
-    
-    echo "<p>".$row['FileSize']."</p>";
-   
-
-    echo "<img src='https://www.offensive-security.com/wp-content/uploads/2022/03/SOC-100-icon-white.svg' alt='PEN-200' />";
-    echo "<i>".$row['Author']."</i>";
 
         
     
@@ -93,8 +79,11 @@ mysqli_close($con);
 </div>
 
   
-   
+   <div class="hold" style="background-color: orangegray;">
+    <h5><i>Sample Projects</i></h5>
+     <?php include_once('Lecturer/sampleVIEW.php');?>
 
+</div>
 
 
 

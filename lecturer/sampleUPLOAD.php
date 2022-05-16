@@ -2,16 +2,16 @@
 session_start();
 error_reporting(0);
 include('../includes/dbconnection.php');
-if (strlen($_SESSION['studentuid']==0)) {
+if (strlen($_SESSION['lecuid']==0)) {
   header('location:logout.php');
   } else{
 
 if(isset($_POST['submit'])&&$_FILES['userfile']['size']>0)
   {
- $userid=$_SESSION['studentuid'];
+ $userid=$_SESSION['lecuid'];
  //echo "working now";
  $author = $_POST['author'];
- $title = $_POST['title'];
+ $category = $_POST['category'];
  $description = $_POST['description'];
         $fileName = $_FILES['userfile']['name'];
         $tmpName  = $_FILES['userfile']['tmp_name'];
@@ -21,12 +21,12 @@ if(isset($_POST['submit'])&&$_FILES['userfile']['size']>0)
         stripslashes ($fileType));
         $fp      = fopen($tmpName, 'r');
         $content = fread($fp, filesize($tmpName));
-        $content = addslashes($content);
+        // $content = addslashes($content);
         fclose($fp);
         $fileName = addslashes($fileName);
         if($con){
        
-        $query = "INSERT INTO `documents`(`id`, `UserID`, `Author`, `Title`, `Description`, `File`, `Content`, `Type`, `FileSize`) VALUES ('null','$userid',' $author',' $title',' $description',' $fileName',' $content','$fileType','$fileSize')";
+        $query = "INSERT INTO `sample_file`(`id`, `UserID`, `File`, `Author`, `Category`, `FileSize`) VALUES ('null','$userid','$fileName','$author',' $category ','$fileSize')";
         mysqli_query($con,$query) or die('Error, query failed'); 
         mysqli_close($con);
         $msg="You have submitted your project successfully.";
@@ -47,7 +47,7 @@ if(isset($_POST['submit'])&&$_FILES['userfile']['size']>0)
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Student</title>
+	<title>Lecturer</title>
 	<link href="../css/bootstrap.min.css" rel="stylesheet">
 	<link href="../css/font-awesome.min.css" rel="stylesheet">
 	<link href="../css/datepicker3.css" rel="stylesheet">
@@ -71,7 +71,7 @@ if(isset($_POST['submit'])&&$_FILES['userfile']['size']>0)
 </head>
 <body>
 	<?php include_once('../includes/header.php');?>
-	<?php include_once('../includes/sidebarSTUDENT.php');?>
+	<?php include_once('../includes/sidebarLEC.php');?>
 		
 	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
 		<div class="row">
@@ -79,7 +79,7 @@ if(isset($_POST['submit'])&&$_FILES['userfile']['size']>0)
 				<li><a href="#">
 					<em class="fa fa-home"></em>
 				</a></li>
-				<li class="active">EDRSSP</li>
+				<li class="active">Sample Project File</li>
 			</ol>
 		</div><!--/.row-->
 		
@@ -106,23 +106,20 @@ if(isset($_POST['submit'])&&$_FILES['userfile']['size']>0)
  
     <div class="col-md-8">
     <label for="name" class="form-label">Author:</label>
-    <input type="text" class="form-control"  name="author">
+    <input type="text" class="form-control"  name="author" readonly=true value="Lecturer">
     </div>
-  <div class="col-md-8">
-    <label for="regno" class="form-label">Title:</label>
-    <input type="text" class="form-control"  name="title">
-  </div>
+  
  
   <div class="col-md-8">
-  <label for="phone" class="form-label">Description:</label>
-  <textarea class="form-control" maxlength="300" placeholder="Brief summary of your Project" id="" style="height: 100px" name="description"></textarea>
+  <label for="phone" class="form-label">Category:</label>
+  <input type="text" class="form-control"  name="category">
   
 </div>
 
    
    
   <div class="col-md-8">
-    <label for="file" class="form-label">Project File:</label>
+    <label for="file" class="form-label">Sample Project File:</label>
     <input type="file" class="form-control"  name="userfile">
   </div>
 

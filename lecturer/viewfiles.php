@@ -27,7 +27,7 @@ $res=mysqli_query($con,$sql) or die(mysqli_error($con));
 </head>
 <body>
     <?php include_once('../includes/header.php');?>
-    <?php include_once('../includes/sidebarSTUDENT.php');?>
+    <?php include_once('../includes/sidebarLEC.php');?>
         
     <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
         <div class="row">
