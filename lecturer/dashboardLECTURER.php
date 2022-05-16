@@ -43,9 +43,19 @@ if (strlen($_SESSION['lecuid']==0)) {
 		</div><!--/.row-->
 		
 		<div class="row">
-			<div class="col-lg-12">
-				<h1 class="page-header">Dashboard</h1>
-			</div>
+			<div class="panel panel-default">
+					<div class="panel-heading"><marquee>Welcome To lecturer's Dashboard</marquee></div>
+
+					<div class="panel-body">
+						<h4>Here are a list of the tasks you can perform</h4>
+						<ul>
+							<li>Submit Project sample to guide students</li>
+							<li> View  students projects  </li>
+							<li> Grade/ Rank submitted students projects</li>
+							<li> Change / update your personal profile  </li>
+						</ul>
+					</div>
+	    </div>
 		</div><!--/.row-->
 		
 		
