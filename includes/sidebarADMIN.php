@@ -13,10 +13,10 @@ include('../includes/dbconnection.php');
             </div>
             <div class="profile-usertitle">
                <?php
-$uid=$_SESSION['lecuid'];
-$ret=mysqli_query($con,"select Lecturer_name from lecturer where id='$uid'");
+$uid=$_SESSION['adminid'];
+$ret=mysqli_query($con,"select user_name from admin where id='$uid'");
 $row=mysqli_fetch_array($ret);
-$name=$row['Lecturer_name'];
+$name=$row['user_name'];
 
 ?>
                 <div class="profile-usertitle-name"><?php echo $name; ?></div>
@@ -27,18 +27,19 @@ $name=$row['Lecturer_name'];
         <div class="divider"></div>
         
         <ul class="nav menu">
-            <li class="active"><a href="dashboardLECTURER.php"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
+            <li class="active"><a href="dashboardADMIN.php"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
                      
-           <li class=""><a href="sampleUPLOAD.php"><em class="fa fa-calendar">&nbsp;</em>Submit Sample</a></li>
+           <li class=""><a href="viewSTUDENTS.php"><em class="fa fa-calendar">&nbsp;</em>View Students</a></li>
 
-           <li class=""><a href="viewfiles.php"><em class="fa fa-calendar">&nbsp;</em>View Files</a></li>
+           <li class=""><a href="viewLECTURER.php"><em class="fa fa-calendar">&nbsp;</em>View Lecturers</a></li>
+           <li class=""><a href="viewPROJECTS.php"><em class="fa fa-calendar">&nbsp;</em>View Documents</a></li>
            
  
 
 
 
             
-            <li><a href="user-profile.php"><em class="fa fa-user">&nbsp;</em>My Profile</a></li>
+            <li><a href="#"><em class="fa fa-user">&nbsp;</em>My Profile</a></li>
             <li><a href="../logout.php"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
 
         </ul>

@@ -8,19 +8,20 @@ if (strlen($_SESSION['studentuid']==0)) {
   } else{
 
 //code deletion
-if(isset($_GET['delid']))
-{
-$rowid=intval($_GET['delid']);
-$query=mysqli_query($con,"delete from documents where id='$rowid'");
-if($query){
-echo "<script>alert('Record successfully deleted');</script>";
-echo "<script>window.location.href='viewFILEs.php'</script>";
-} else {
-echo "<script>alert('Something went wrong. Please try again');</script>";
+// if(isset($_GET['delid']))
+// {
+// $rowid=intval($_GET['delid']);
+// $query=mysqli_query($con,"delete from documents where id='$rowid'");
+// if($query){
+// echo "<script>alert('Record successfully deleted');</script>";
+// echo "<script>window.location.href='viewFILEs.php'</script>";
+// } else {
+// echo "<script>alert('Something went wrong. Please try again');</script>";
 
-}
+// }
 
-}}
+// }
+  }
 
 
 ?>

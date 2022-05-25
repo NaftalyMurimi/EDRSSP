@@ -7,14 +7,14 @@ if(isset($_POST['login']))
   {
     $email=$_POST['email'];
     $regno=$_POST['regno'];
-    $query=mysqli_query($con,"select id from students where  Email='$email' && Reg_no='$regno' ");
+    $query=mysqli_query($con,"select id from students where  Email='$email' && Reg_no='$regno'  && `Account` = 'Active' ");
     $ret=mysqli_fetch_array($query);
     if($ret>0){
       $_SESSION['studentuid']=$ret['id'];
      header('location:dashboardSTUDENT.php');
     }
     else{
-    $msg="Invalid Details.";
+    $msg="Invalid Details. or Account not activated";
     }
   }
   ?>

@@ -73,7 +73,7 @@
       	<button type="button" class="btn btn-info"><a href="student/login.php">Students</a></button> &nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
       	<button type="button" class="btn btn-info"><a href="lecturer/login.php">Lecturer</a></button>
       	&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-      	<button type="button" class="btn btn-warning"><a href="">Admin</a></button>
+      	<button type="button" class="btn btn-warning"><a href="admin/login.php">Admin</a></button>
      
       </div>
       <div class="modal-footer">

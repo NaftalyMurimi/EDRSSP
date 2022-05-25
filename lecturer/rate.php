@@ -2,6 +2,9 @@
 session_start();
 error_reporting(0);
 include('../includes/dbconnection.php');
+$sql="SELECT * FROM documents";
+$res=mysqli_query($con,$sql) or die(mysqli_error($con));
+
 ?>
 <!DOCTYPE html>
 <html>
