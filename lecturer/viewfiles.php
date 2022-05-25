@@ -1,29 +1,19 @@
 <?php
-session_start();
-error_reporting(0);
-
-
-include('../includes/dbconnection.php');
-$sql="SELECT * FROM documents";
-$res=mysqli_query($con,$sql) or die(mysqli_error($con));
-  ?>
+include_once '../includes/dbconnection.php';
+$result = mysqli_query($con,"SELECT * FROM documents");
+?>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title> Lecturer Profile</title>
+    <title>Admin</title>
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/font-awesome.min.css" rel="stylesheet">
     <link href="../css/datepicker3.css" rel="stylesheet">
     <link href="../css/styles.css" rel="stylesheet">
     
-    <!--Custom Font-->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-    <!--[if lt IE 9]>
-    <script src="js/html5shiv.js"></script>
-    <script src="js/respond.min.js"></script>
-    <![endif]-->
+    
 </head>
 <body>
     <?php include_once('../includes/header.php');?>
@@ -35,79 +25,103 @@ $res=mysqli_query($con,$sql) or die(mysqli_error($con));
                 <li><a href="#">
                     <em class="fa fa-home"></em>
                 </a></li>
-                <li class="active">Projects</li>
+                <li class="active">Admin</li>
             </ol>
         </div><!--/.row-->
-        
-        
+    <div class="row ">
+            <div class="col-lg-12 ">
+        <hr/>
                 
-        
-        <div class="row">
-            <div class="col-lg-12">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="modal-title" id="myModalLabel">         
+            <div class="panel panel-primary">
+            <div class="panel-heading">
+           Project documents List
             
-                
-                
-                <div class="panel panel-default">
-                    <div class="panel-heading">Student projects</div>
-                    <div class="panel-body">
-                        <div class="hold">
-    <table class="table table-striped bg-white table-hover seen">
+            </div> 
+
+            </div>
+            </h4>
+     </div>
+     <!-- /.panel-heading -->
+  <?php
+if (mysqli_num_rows($result) > 0) {
+?>   
+         <table class="table table-dark table-hover">
         <tr>
             <th>S No.</th>
+            <th>Author</th>
             <th>Title</th>
             <th>Rating</th>
             <th>Description</th>
+           
             
-            <th>FileSize (/1024kbs)</th>
-            <th>Author</th>
             <th>Action</th>
         </tr>
 
 <?php
-while($row=mysqli_fetch_assoc($res))
-{
-  
-   
+$i=0;
+while($row = mysqli_fetch_array($result)) {
+?>           
 
+            
+        <td><?php echo $row["id"]; ?></td>
+        <td><?php echo $row ['Author'];?></td>
+        <td><?php echo $row ['Title'];?></td>
+        <td><?php echo $row ['Rating'];?></td>
+        <td><?php echo $row ['Description'];?></td>
         
-    
-    // echo "</div>";
-echo "</td><td>";
-echo $row['id'];
-echo "</td><td>";
-echo $row['File'];
-echo "</td><td>";
-echo $row['Rating'];
-echo "</td><td>";
-echo $row['Description'];
-echo "</td><td>";
-echo $row['FileSize'];
-echo "</td><td>";
-echo $row['Author'];
-echo "
-<td><a href='rate.php'>Rating</a></td>
-</tr>";
-
-    
-   
+        <td style="text-align:center">
+        <a href="rate.php?id=<?php echo $row["id"]; ?>" class='btn btn-success btn-outline'>Rating</a>
+                      
+        </td>
+               </tr>
+            <?php
+            $i++;
+            }
+            ?>
+</table>
+ <?php
 }
-mysqli_close($con);
-?>  
-<!-- Modal -->
+else
+{
+    echo "No result found";
+}
+?>
 
+                            <!-- /.table-responsive -->
+                            
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+              
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /#page-wrapper -->
+
+                        <div class="col-md-12">
+                            
+   
+
+                        </div>
                     </div>
                 </div><!-- /.panel-->
             </div><!-- /.col-->
-            <?php include_once('includes/footer.php');?>
+            
+            
         </div><!-- /.row -->
     </div><!--/.main-->
-   
-    <!-- Button trigger modal -->
+    </div> <!-- the upload -->
+           
 
+<!-- /.modal-content -->
+                                
 
-<!-- Modal -->
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-   integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+<script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+     <?php include ('script.php');?>
 </body>
 </html>
