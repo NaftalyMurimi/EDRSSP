@@ -70,10 +70,10 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-      	<button type="button" class="btn btn-info"><a href="student/login.php">Students</a></button> &nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-      	<button type="button" class="btn btn-info"><a href="lecturer/login.php">Lecturer</a></button>
-      	&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-      	<button type="button" class="btn btn-warning"><a href="admin/login.php">Admin</a></button>
+      	<button type="button" class="btn btn-info float-start"><a href="student/login.php">Students</a></button>&nbsp &nbsp&nbsp &nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+      	<button type="button" class="btn btn-info float-center"><a href="lecturer/login.php">Lecturer</a></button>
+      	
+      	<button type="button" class="btn btn-warning float-end"><a href="admin/login.php">Admin</a></button>
      
       </div>
       <div class="modal-footer">

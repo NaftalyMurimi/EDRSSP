@@ -52,7 +52,7 @@ if (strlen($_SESSION['adminid']==0)) {
 				<li><a href="#">
 					<em class="fa fa-home"></em>
 				</a></li>
-				<li class="active">Seller</li>
+				<li class="active">Admin</li>
 			</ol>
 		</div><!--/.row-->
 		<div class="row ">

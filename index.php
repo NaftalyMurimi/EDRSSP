@@ -32,7 +32,7 @@
           </h1>
           <p class="lead my-4 text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, dignissimos?</p>
           <a href="student/login.php" class="btn btn-secondary btn-lg">Student</a>
-          <a href="#pricing" class="btn btn-info btn-lg">Lecturer</a>
+          <a href="lecturer/login.php" class="btn btn-info btn-lg">Lecturer</a>
         </div>
         
       </div>
