@@ -42,10 +42,12 @@ $res=mysqli_query($con,$sql) or die(mysqli_error($con));
         <tr>
             <th>S No.</th>
             <th>Title</th>
+            <th>Author</th>
+            <th>Rating</th>
             <th>Description</th>
             
             <th>FileSize</th>
-            <th>Author</th>
+            
             <th>Action</th>
         </tr>
 <?php
@@ -62,11 +64,14 @@ echo $row['id'];
 echo "</td><td>";
 echo $row['File'];
 echo "</td><td>";
+echo $row['Author'];
+echo "</td><td>";
+echo $row['Rating']." /10";
+echo "</td><td>";
 echo $row['Description'];
 echo "</td><td>";
 echo $row['FileSize'];
-echo "</td><td>";
-echo $row['Author'];
+
 echo "
 <td><a href=\"User/delete.php?data=".$row['id']."\">Download</a></td>
 </tr>";

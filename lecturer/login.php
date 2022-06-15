@@ -57,15 +57,7 @@ if(isset($_POST['login']))
 							<div class="form-group">
 								<input class="form-control" placeholder="Lecturer No" name="lecno" type="text" value="" required="true">
 							</div>
-							<!-- <div class="form-group">
-								<select class="form-control" >
-									<option>Doctor</option>
-									<option>Nurse</option>
-									<option>Mum</option>
-									<option>Clinic Admin</option>
-
-								</select>
-							</div> -->
+							
 							<div class="checkbox">
 								<button type="submit" value="login" name="login" class="btn btn-primary">login</button>
 							</div>
