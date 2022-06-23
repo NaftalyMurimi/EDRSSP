@@ -73,7 +73,7 @@ echo "</td><td>";
 echo $row['FileSize'];
 
 echo "
-<td><a href=\"User/delete.php?data=".$row['id']."\">Download</a></td>
+<td><a href='"."download.php?id=".$row['id']."'>download</a></td>
 </tr>";
 
     

@@ -6,29 +6,31 @@ if (strlen($_SESSION['studentuid']==0)) {
   header('location:logout.php');
   } else{
 
-if(isset($_POST['submit'])&&$_FILES['userfile']['size']>0)
+if(isset($_POST['submit']))
   {
  $userid=$_SESSION['studentuid'];
  //echo "working now";
  $author = $_POST['author'];
  $title = $_POST['title'];
  $description = $_POST['description'];
-        $fileName = $_FILES['userfile']['name'];
-        $tmpName  = $_FILES['userfile']['tmp_name'];
-        $fileSize = $_FILES['userfile']['size'];
-        $fileType = $_FILES['userfile']['type'];
-        $fileType=mysqli_real_escape_string($con,
-        stripslashes ($fileType));
-        $fp      = fopen($tmpName, 'r');
-        $content = fread($fp, filesize($tmpName));
-        $content = addslashes($content);
-        fclose($fp);
-        $fileName = addslashes($fileName);
-        if($con){
-       
-        $query = "INSERT INTO `documents`(`id`, `UserID`, `Author`, `Title`, `Description`, `File`, `Content`, `Type`, `FileSize`) VALUES ('null','$userid',' $author',' $title',' $description',' $fileName',' $content','$fileType','$fileSize')";
-        mysqli_query($con,$query) or die('Error, query failed'); 
-        mysqli_close($con);
+ $fileName = $_FILES['userfile']['name'];
+ $tmpName  = $_FILES['userfile']['tmp_name'];
+ $fileSize = $_FILES['userfile']['size'];
+ $fileType = $_FILES['userfile']['type'];
+ $fileType=mysqli_real_escape_string($con,
+ stripslashes ($fileType));
+ $fp      = fopen($tmpName, 'r');
+ $content = fread($fp, filesize($tmpName));
+ $content = addslashes($content);
+ fclose($fp);
+ $fileName = addslashes($fileName);
+ if($con){
+// 	INSERT INTO upload (name, size, type, content ) ".
+//  "VALUES ('$fileName', '$fileSize', '$fileType', '$content')
+ $query = "INSERT INTO `documents`(`id`, `UserID`, `Author`, `Title`, `Description`, `File`, `Rating`, `Content`, `Type`, `FileSize`) 
+ VALUES ('null','$userid','$author','$title','$description','$fileName','','$content','$fileType','$fileSize')";
+ mysqli_query($con,$query) or die('Error, query failed'); 
+ mysqli_close($con);
         $msg="You have submitted your project successfully.";
         }
         else { 
