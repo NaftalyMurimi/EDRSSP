@@ -26,7 +26,8 @@ if(isset($_POST['submit'])&&$_FILES['userfile']['size']>0)
         $fileName = addslashes($fileName);
         if($con){
        
-        $query = "INSERT INTO `sample_file`(`id`, `UserID`, `File`, `Author`, `Category`, `FileSize`) VALUES ('null','$userid','$fileName','$author',' $category ','$fileSize')";
+        $query = "INSERT INTO `sample_file`(`id`, `UserID`, `File`, `Author`, `Category`, `FileSize`) 
+		VALUES ('null','$userid','$fileName','$author',' $category ','$fileSize')";
         mysqli_query($con,$query) or die('Error, query failed'); 
         mysqli_close($con);
         $msg="You have submitted your project successfully.";

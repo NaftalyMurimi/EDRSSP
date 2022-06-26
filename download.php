@@ -7,7 +7,8 @@ if(isset($_GET['id']))
 //$con = mysqli_connect('localhost', 'root', '') or die(mysqli_error($con));
 //$db = mysqli_select_db('olss', $con);
 //$id    = $_GET['id'];
-$query = "SELECT name, type, size, content " .
+//`Content`, `Type`, `FileSize`
+$query = "SELECT File, Type, FileSize, Content " .
          "FROM documents WHERE id = '$id'";
 $result = mysqli_query($con,$query) or die('Error, query failed');
 list($name, $type, $size, $content) = mysqli_fetch_array($result);

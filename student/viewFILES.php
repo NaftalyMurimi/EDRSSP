@@ -8,19 +8,19 @@ if (strlen($_SESSION['studentuid']==0)) {
   } else{
 
 //code deletion
-// if(isset($_GET['delid']))
-// {
-// $rowid=intval($_GET['delid']);
-// $query=mysqli_query($con,"delete from documents where id='$rowid'");
-// if($query){
-// echo "<script>alert('Record successfully deleted');</script>";
-// echo "<script>window.location.href='viewFILEs.php'</script>";
-// } else {
-// echo "<script>alert('Something went wrong. Please try again');</script>";
+if(isset($_GET['delid']))
+{
+$rowid=intval($_GET['delid']);
+$query=mysqli_query($con,"delete from documents where id='$rowid'");
+if($query){
+echo "<script>alert('Record successfully deleted');</script>";
+echo "<script>window.location.href='viewFILEs.php'</script>";
+} else {
+echo "<script>alert('Something went wrong. Please try again');</script>";
 
-// }
+}
 
-// }
+}
   }
 
 
@@ -90,12 +90,12 @@ while ($row=mysqli_fetch_array($ret)) {
 ?>
              
                 <tr>
-       						<td><?php echo $cnt;?></td>
-              		<td><?php  echo $row['Title'];?></td>
+       			  <td><?php echo $cnt;?></td>
+              	  <td><?php  echo $row['Title'];?></td>
                   <td><?php  echo $row['Description'];?></td>
                   <td><?php  echo $row['File'];?></td>
                   <td><?php  echo $row['FileSize']. " Kb";?></td>
-                  <td><a href="viewFILES.php?delid=<?php echo $row['ID'];?>">Delete</a>
+                  <td><a href="viewFILES.php?delid=<?php echo $row['id'];?>">Delete</a>
                 </tr>
 <?php 
 $cnt=$cnt+1;
