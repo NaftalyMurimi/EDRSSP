@@ -75,10 +75,9 @@ if (strlen($_SESSION['adminid']==0)) {
         <td><?php echo $row ['Email'];?></td>
         <td><?php echo $row ['Account'];?></td>
         <td style="text-align:center">
-		<a rel="tooltip"  title="Delete" id="<?php  ?>" href="<?php  ?>" data-target="#delete_user<?php ?>" data-toggle="modal"class="btn btn-danger btn-outline"><i class="fa fa-trash-o"></i> Delete</a>	
+		<a rel="tooltip"  title="Delete" id="<?php  ?>" href="<?php  ?>" data-target="#delete_user<?php ?>" data-toggle="modal"class="btn btn-warning btn-outline"><i class="fa fa-trash-o"></i> Deactivate</a>	
 		<?php// include ('delete_candidate_modal.php'); ?>
-		<a rel="tooltip"  title="Edit" id="<?php?>" href="#edit_candidate<?php  ?>"  data-toggle="modal"class="btn btn-success btn-outline"><i class="fa fa-pencil"></i> Edit</a>	
-												
+											
 		</td>
                 </tr>
 <?php 

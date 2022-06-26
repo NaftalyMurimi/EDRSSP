@@ -43,7 +43,8 @@ if (strlen($_SESSION['adminid']==0)) {
 			<div class="panel-heading">
 			Student List
 			<a  href = "activateLECTURER.php"class = "btn btn-info btn-outline pull-right" style = "margin-right:12px;" name = "go"><i class = "fa fa-asterisk fa-spin"></i> Activate All Lecturers Account</a>
-			</div> 
+			<a  href = "addLECTURER.php"class = "btn btn-success btn-outline pull-right" style = "margin-right:12px;" name = "go"><i class = "fa fa-pencil "></i> Add Lecturer</a>
+		</div> 
 
 			</div>
 			</h4>
