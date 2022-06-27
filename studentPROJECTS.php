@@ -1,4 +1,5 @@
-<?php
+
+  <?php
 
 include('includes/dbconnection.php');
 $sql="SELECT * FROM documents";
@@ -86,7 +87,7 @@ mysqli_close($con);
 ?>  
 </div>
 
-  <i>Student Projects</i>
+  
    <div class="hold" style="background-color: orangegray;">
     <h5><i> <form class="row float-start">
         <div class="form-group">

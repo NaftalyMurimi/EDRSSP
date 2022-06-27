@@ -1,10 +1,9 @@
+<!-- fetch sample files -->
 <?php
-
 include('includes/dbconnection.php');
-$sql="SELECT * FROM documents";
-$res=mysqli_query($con,$sql) or die(mysqli_error($con));
+$sql="SELECT * FROM sampledoc";
+$result=mysqli_query($con,$sql) or die(mysqli_error($con));
   ?>
-
 
 
 
@@ -29,9 +28,8 @@ $res=mysqli_query($con,$sql) or die(mysqli_error($con));
     <!-- Navigation bar -->
     <?php include_once('includes/nav.php');?>
      <!-- switch pages -->
-   
-    <!-- search bar here -->
     
+    <!-- search bar here -->
     
     
 
@@ -40,12 +38,13 @@ $res=mysqli_query($con,$sql) or die(mysqli_error($con));
 
 
 <div class="hold">
+    
     <table class="table table-striped bg-white table-hover " style="margin-top: 20px;">
-        <tr>
+    <tr>
             <!-- <th>S No.</th> -->
             <th>Title</th>
             <th>Author</th>
-            <th>Rating</th>
+           
             <th>Description</th>
             
             <th>FileSize</th>
@@ -53,30 +52,20 @@ $res=mysqli_query($con,$sql) or die(mysqli_error($con));
             <th>Action</th>
         </tr>
 <?php
-while($row=mysqli_fetch_assoc($res))
+while($row=mysqli_fetch_assoc($result))
 {
-    // $id=$row['id'];
-    // $cnt=$cnt+1;
-    
 
-        
-    
-    // echo "</div>";
-// echo "</td><td>";
-// echo $cnt;
 echo "</td><td>";
 echo $row['File'];
 echo "</td><td>";
 echo $row['Author'];
-echo "</td><td>";
-echo $row['Rating']." /10";
 echo "</td><td>";
 echo $row['Description'];
 echo "</td><td>";
 echo $row['FileSize'];
 
 echo "
-<td><a href='"."download.php?id=".$row['id']."'>download</a></td>
+<td><a href='"."download1.php?id=".$row['id']."'>download</a></td>
 </tr>";
 
     
@@ -86,22 +75,21 @@ mysqli_close($con);
 ?>  
 </div>
 
-  <i>Student Projects</i>
+  
    <div class="hold" style="background-color: orangegray;">
     <h5><i> <form class="row float-start">
         <div class="form-group">
                    <select class="form-control" onchange = "page(this.value)" >
-                    <option value = "#"></option>
-                    <option value = "samplePROJECTS.php">Sample Projects</option>
-                   <option value = "studentPROJECTS.php">Student Projects</option>
-                   
+                    <option  value = "#"></option>
+                   <option value = "projects.php">Student Projects</option>
+                   <option value = "samplePROJECTS.php">Sample Projects</option>
 
                    </select>
                </div> 
                
                
        </form>
-       </i></h5>
+       <br/></h5>
  
 
 </div>

@@ -30,24 +30,26 @@ $row= mysqli_fetch_array($result);
     
     
 </head>
-<body>
+<body class="container-fluid">
     <?php //include_once('../includes/header.php');?>
     <?php //include_once('../includes/sidebarLEC.php');?>
         
-    <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+    <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main ">
         <div class="row">
-            <ol class="breadcrumb">
+            <div class="col-md-8">
+              <ol class="breadcrumb">
                 <li><a href="#">
                     <em class="fa fa-home"></em>
                 </a></li>
-                <li class="active">Admin</li>
+                <li class="active">Admin / Rating student Projects</li>
             </ol>
+            </div>
         </div><!--/.row-->
     <div class="row ">
             <div class="col-lg-12 ">
-        <hr/>
+        
                 
-    <div class="panel panel-default">
+    <div class="panel panel-default bg-info">
 
      <form name="Myform" id="Myform" action="" method="post" >
  <input type="hidden" name="id"  value="<?php echo $row['id']; ?>">

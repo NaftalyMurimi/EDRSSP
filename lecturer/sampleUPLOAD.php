@@ -27,8 +27,8 @@ if(isset($_POST['submit']))
  if($con){
 // 	INSERT INTO upload (name, size, type, content ) ".
 //  "VALUES ('$fileName', '$fileSize', '$fileType', '$content')
- $query = "INSERT INTO `sampledoc`(`id`, `UserID`, `Author`, `Title`, `Description`) 
- VALUES ('null','$userid','$author','$title','$description')";
+ $query = "INSERT INTO `sampledoc`(`id`, `UserID`, `Author`, `Title`, `Description`, `File`,  `Content`, `Type`, `FileSize`) 
+ VALUES ('null','$userid','$author','$title','$description','$fileName','$content','$fileType','$fileSize')";
  mysqli_query($con,$query) or die('Error, query failed'); 
  mysqli_close($con);
         $msg="You have submitted your project successfully.";
