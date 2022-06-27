@@ -29,8 +29,8 @@ $name=$row['FullName'];
         <ul class="nav menu">
             <li class="active"><a href="dashboardSTUDENT.php"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
                      
-           <li class=""><a href="addFILE.php"><em class="fa fa-calendar">&nbsp;</em>Submit Project file</a></li>
-           <li class=""><a href="viewFILES.php"><em class="fa fa-calendar">&nbsp;</em>View Files</a></li>
+           <li class=""><a href="addFILE.php"><em class="fa fa-file">&nbsp;</em>Submit Project file</a></li>
+           <li class=""><a href="viewFILES.php"><em class="fa fa-folder">&nbsp;</em>View Files</a></li>
            
  
 

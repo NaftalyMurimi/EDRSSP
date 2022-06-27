@@ -18,7 +18,7 @@ if (strlen($_SESSION['studentuid']==0)) {
   }
   else
     {
-      $msg="Something Went Wrong. Please try again.";
+      $msg1="Something Went Wrong. Please try again.";
     }
   }
   ?>
@@ -65,8 +65,11 @@ if (strlen($_SESSION['studentuid']==0)) {
 				<div class="panel panel-default">
 					<div class="panel-heading">Profile</div>
 					<div class="panel-body">
-						<p style="font-size:16px; color:red" align="center"> <?php if($msg){
+						<p style="font-size:16px; color:green" align="center"> <?php if($msg){
     echo $msg;
+  }  ?> </p>
+  <p style="font-size:16px; color:red" align="center"> <?php if($msg){
+    echo $msg1;
   }  ?> </p>
 						<div class="col-md-12">
 							 <?php

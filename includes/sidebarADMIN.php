@@ -29,10 +29,10 @@ $name=$row['user_name'];
         <ul class="nav menu">
             <li class="active"><a href="dashboardADMIN.php"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
                      
-           <li class=""><a href="viewSTUDENTS.php"><em class="fa fa-calendar">&nbsp;</em>View Students</a></li>
+           <li class=""><a href="viewSTUDENTS.php"><em class="fa fa-users">&nbsp;</em>View Students</a></li>
 
-           <li class=""><a href="viewLECTURER.php"><em class="fa fa-calendar">&nbsp;</em>View Lecturers</a></li>
-           <li class=""><a href="viewPROJECTS.php"><em class="fa fa-calendar">&nbsp;</em>View Documents</a></li>
+           <li class=""><a href="viewLECTURER.php"><em class="fa fa-user-md">&nbsp;</em>View Lecturers</a></li>
+           <li class=""><a href="viewPROJECTS.php"><em class="fa fa-folder">&nbsp;</em>View Documents</a></li>
            
  
 
