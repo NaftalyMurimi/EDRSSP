@@ -42,7 +42,11 @@ if (strlen($_SESSION['lecuid']==0)) {
 			</ol>
 		</div><!--/.row-->
 		
-		<div class="row">
+	<div class="row ">
+			<div class="col-lg-12 ">
+		<hr/>
+		
+		
 			<div class="panel panel-default">
 					<div class="panel-heading"><marquee>Welcome To lecturer's Dashboard</marquee></div>
 
@@ -59,6 +63,9 @@ if (strlen($_SESSION['lecuid']==0)) {
 		</div><!--/.row-->
 		
 		
+	</div>
+	</div>
+
 		
 		
 		

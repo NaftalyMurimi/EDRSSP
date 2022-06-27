@@ -8,18 +8,21 @@ if (strlen($_SESSION['adminid']==0)) {
 
 if(isset($_POST['submit']))
   {
- $userid=$_SESSION['lecuid'];
+ //$userid=$_SESSION['lecuid'];
  //echo "working now";
- $author = $_POST['author'];
- $category = $_POST['category'];
- $description = $_POST['description'];
-       
+ $name = $_POST['lecname'];
+ $email = $_POST['email'];
+ $lecno= $_POST['lecno'];
+ $date = $_POST['date'];
+ $phone = $_POST['phone'];
+ $gender = $_POST['gender'];      
         if($con){
        
-        $query = "";
+        $query = "INSERT INTO `lecturer`(`id`, `Lecturer_name`, `Email`, `Lec_no`, `Date_of_Entry`, `Phone_No`, `Gender`, `Account`)
+		 VALUES ('null','$name','$email',' $lecno',' $date','$phone',' $gender',' Not Activated')";
         mysqli_query($con,$query) or die('Error, query failed'); 
         mysqli_close($con);
-        $msg="You have submitted your project successfully.";
+        $msg="You have added the Lecturer successfully.";
         }
         else { 
          // header('location:../View/View.php');   
@@ -89,7 +92,7 @@ if(isset($_POST['submit']))
 					</div>
 					<div class="panel-heading">Add Lecturer</div>
 					<div class="panel-body">
-						<p style="font-size:16px; color:red" align="center"> <?php if($msg){
+						<p style="font-size:16px; color:green" align="center"> <?php if($msg){
    					echo $msg;}  ?> </p>
   					<p style="font-size:16px; color:red" align="center"> <?php if($msg1){
    					echo $msg1;}  ?> </p>
@@ -98,28 +101,30 @@ if(isset($_POST['submit']))
 <form name="Myform" id="Myform" action="" method="post">
  
     <div class="col-md-8">
-    <label for="name" class="form-label">Author:</label>
-    <input type="text" class="form-control"  name="author" readonly=true value="Lecturer">
+    <label for="name" class="form-label">Lecturer Name:</label>
+    <input type="text" class="form-control"  name="lecname" >
     </div>
 	<div class="col-md-8">
-    <label for="name" class="form-label">Author:</label>
-    <input type="text" class="form-control"  name="author" readonly=true value="Lecturer">
+    <label for="name" class="form-label">Email:</label>
+    <input type="email" class="form-control"  name="email">
     </div>
 	<div class="col-md-8">
-    <label for="name" class="form-label">Author:</label>
-    <input type="text" class="form-control"  name="author" readonly=true value="Lecturer">
+    <label for="name" class="form-label">Lec No:</label>
+    <input type="text" class="form-control"  name="lecno" >
     </div>
 	<div class="col-md-8">
-    <label for="name" class="form-label">Author:</label>
-    <input type="text" class="form-control"  name="author" readonly=true value="Lecturer">
+    <label for="name" class="form-label">Date:</label>
+    <input type="date" class="form-control"  name="date">
     </div>
  
   <div class="col-md-8">
-  <label for="phone" class="form-label">Category:</label>
-  <input type="text" class="form-control"  name="category">
-  
-</div>
-
+  <label for="phone" class="form-label">Phone No:</label>
+  <input type="number" class="form-control"  name="Phone">
+  </div>
+  <div class="col-md-8">
+  <label for="phone" class="form-label">Gender:</label>
+  <input type="text" class="form-control"  name="gender">
+  </div>
    
    
   

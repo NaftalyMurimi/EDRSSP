@@ -47,6 +47,7 @@ $result = mysqli_query($con,"SELECT * FROM documents");
      <!-- /.panel-heading -->
   <?php
 if (mysqli_num_rows($result) > 0) {
+    
 ?>   
          <table class="table table-dark table-hover">
         <tr>
@@ -61,12 +62,17 @@ if (mysqli_num_rows($result) > 0) {
         </tr>
 
 <?php
-$i=0;
+
 while($row = mysqli_fetch_array($result)) {
+    $id=$row['id'];
+    $cnt=$cnt+1; 
+
+  
+
 ?>           
 
             
-        <td><?php echo $row["id"]; ?></td>
+        <td><?php echo $cnt; ?></td>
         <td><?php echo $row ['Author'];?></td>
         <td><?php echo $row ['Title'];?></td>
         <td><?php echo $row ['Rating'];?></td>

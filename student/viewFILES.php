@@ -57,8 +57,9 @@ echo "<script>alert('Something went wrong. Please try again');</script>";
 		
 				
 		
-		<div class="row">
-			<div class="col-lg-12">
+		<div class="row ">
+            <div class="col-lg-12 ">
+        <hr/>
 			
 				
 				

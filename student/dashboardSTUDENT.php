@@ -41,8 +41,10 @@ if (strlen($_SESSION['studentuid']==0)) {
 				<li class="active">Dashboard</li>
 			</ol>
 		</div><!--/.row-->
-		
-		<div class="row">
+		<div class="row ">
+            <div class="col-lg-12 ">
+        <hr/>
+	
 			<div class="panel panel-default">
 					<div class="panel-heading"><marquee>Welcome To Student's Dashboard</marquee></div>
 

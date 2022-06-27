@@ -53,14 +53,15 @@ $res=mysqli_query($con,$sql) or die(mysqli_error($con));
 <?php
 while($row=mysqli_fetch_assoc($res))
 {
-  
+    $id=$row['id'];
+    $cnt=$cnt+1;
     
 
         
     
     // echo "</div>";
 echo "</td><td>";
-echo $row['id'];
+echo $cnt;
 echo "</td><td>";
 echo $row['File'];
 echo "</td><td>";

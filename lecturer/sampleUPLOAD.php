@@ -6,30 +6,31 @@ if (strlen($_SESSION['lecuid']==0)) {
   header('location:logout.php');
   } else{
 
-if(isset($_POST['submit'])&&$_FILES['userfile']['size']>0)
+if(isset($_POST['submit']))
   {
  $userid=$_SESSION['lecuid'];
  //echo "working now";
  $author = $_POST['author'];
- $category = $_POST['category'];
+ $title = $_POST['title'];
  $description = $_POST['description'];
-        $fileName = $_FILES['userfile']['name'];
-        $tmpName  = $_FILES['userfile']['tmp_name'];
-        $fileSize = $_FILES['userfile']['size'];
-        $fileType = $_FILES['userfile']['type'];
-        $fileType=mysqli_real_escape_string($con,
-        stripslashes ($fileType));
-        $fp      = fopen($tmpName, 'r');
-        $content = fread($fp, filesize($tmpName));
-        // $content = addslashes($content);
-        fclose($fp);
-        $fileName = addslashes($fileName);
-        if($con){
-       
-        $query = "INSERT INTO `sample_file`(`id`, `UserID`, `File`, `Author`, `Category`, `FileSize`) 
-		VALUES ('null','$userid','$fileName','$author',' $category ','$fileSize')";
-        mysqli_query($con,$query) or die('Error, query failed'); 
-        mysqli_close($con);
+ $fileName = $_FILES['userfile']['name'];
+ $tmpName  = $_FILES['userfile']['tmp_name'];
+ $fileSize = $_FILES['userfile']['size'];
+ $fileType = $_FILES['userfile']['type'];
+ $fileType=mysqli_real_escape_string($con,
+ stripslashes ($fileType));
+ $fp      = fopen($tmpName, 'r');
+ $content = fread($fp, filesize($tmpName));
+ $content = addslashes($content);
+ fclose($fp);
+ $fileName = addslashes($fileName);
+ if($con){
+// 	INSERT INTO upload (name, size, type, content ) ".
+//  "VALUES ('$fileName', '$fileSize', '$fileType', '$content')
+ $query = "INSERT INTO `sampledoc`(`id`, `UserID`, `Author`, `Title`, `Description`) 
+ VALUES ('null','$userid','$author','$title','$description')";
+ mysqli_query($con,$query) or die('Error, query failed'); 
+ mysqli_close($con);
         $msg="You have submitted your project successfully.";
         }
         else { 
@@ -80,16 +81,17 @@ if(isset($_POST['submit'])&&$_FILES['userfile']['size']>0)
 				<li><a href="#">
 					<em class="fa fa-home"></em>
 				</a></li>
-				<li class="active">Sample Project File</li>
+				<li class="active">EDRSSP</li>
 			</ol>
 		</div><!--/.row-->
 		
 		
 				
 		
-		<div class="row ">
-			<div class="col-lg-12 ">
-			
+		
+			<div class="row ">
+            <div class="col-lg-12 ">
+        <hr/>
 				
 				
 				<div class="panel panel-default seeupload ">
@@ -97,7 +99,7 @@ if(isset($_POST['submit'])&&$_FILES['userfile']['size']>0)
 					</div>
 					<div class="panel-heading">Upload File</div>
 					<div class="panel-body">
-						<p style="font-size:16px; color:red" align="center"> <?php if($msg){
+						<p style="font-size:16px; color:green" align="center"> <?php if($msg){
    					echo $msg;}  ?> </p>
   					<p style="font-size:16px; color:red" align="center"> <?php if($msg1){
    					echo $msg1;}  ?> </p>
@@ -107,20 +109,23 @@ if(isset($_POST['submit'])&&$_FILES['userfile']['size']>0)
  
     <div class="col-md-8">
     <label for="name" class="form-label">Author:</label>
-    <input type="text" class="form-control"  name="author" readonly=true value="Lecturer">
+    <input type="text" class="form-control"  name="author">
     </div>
-  
+  <div class="col-md-8">
+    <label for="regno" class="form-label">Title:</label>
+    <input type="text" class="form-control"  name="title">
+  </div>
  
   <div class="col-md-8">
-  <label for="phone" class="form-label">Category:</label>
-  <input type="text" class="form-control"  name="category">
+  <label for="phone" class="form-label">Description:</label>
+  <textarea class="form-control" maxlength="300" placeholder="Brief summary of your Project" id="" style="height: 100px" name="description"></textarea>
   
 </div>
 
    
    
   <div class="col-md-8">
-    <label for="file" class="form-label">Sample Project File:</label>
+    <label for="file" class="form-label">Project File:</label>
     <input type="file" class="form-control"  name="userfile">
   </div>
 

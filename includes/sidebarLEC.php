@@ -30,8 +30,10 @@ $name=$row['Lecturer_name'];
             <li class="active"><a href="dashboardLECTURER.php"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
                      
            <li class=""><a href="sampleUPLOAD.php"><em class="fa fa-calendar">&nbsp;</em>Submit Sample</a></li>
+           <li class=""><a href="sampleVIEW.php"><em class="fa fa-file">&nbsp;</em>View Sample Files</a></li>
 
-           <li class=""><a href="viewfiles.php"><em class="fa fa-calendar">&nbsp;</em>View Files</a></li>
+          
+           <li class=""><a href="viewfiles.php"><em class="fa fa-folder">&nbsp;</em>Student P Files</a></li>
            
  
 

@@ -33,7 +33,7 @@ if (strlen($_SESSION['adminid']==0)) {
 	<?php include_once('../includes/sidebarADMIN.php');?>
 	
 		
-		<!-- <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+	 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
 		<div class="row">
 			<ol class="breadcrumb">
 				<li><a href="#">
@@ -45,7 +45,7 @@ if (strlen($_SESSION['adminid']==0)) {
 		
 		<!-- <div class="row">
 			
-		 -->
+		
 		<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
 		<div class="row">
 			<ol class="breadcrumb">

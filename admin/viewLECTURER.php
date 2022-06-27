@@ -24,7 +24,7 @@ if (strlen($_SESSION['adminid']==0)) {
 	<?php include_once('../includes/sidebarADMIN.php');?>
 		
 	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
-		<div class="row">
+	<div class="row">
 			<ol class="breadcrumb">
 				<li><a href="#">
 					<em class="fa fa-home"></em>
@@ -32,10 +32,9 @@ if (strlen($_SESSION['adminid']==0)) {
 				<li class="active">Admin</li>
 			</ol>
 		</div><!--/.row-->
-	<div class="row ">
+		<div class="row ">
 			<div class="col-lg-12 ">
-		<hr/>
-				
+		<hr/>			
     <div class="panel panel-default">
         <div class="panel-heading">
             <h4 class="modal-title" id="myModalLabel">         

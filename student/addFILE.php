@@ -88,9 +88,10 @@ if(isset($_POST['submit']))
 		
 				
 		
-		<div class="row ">
-			<div class="col-lg-12 ">
-			
+		
+			<div class="row ">
+            <div class="col-lg-12 ">
+        <hr/>
 				
 				
 				<div class="panel panel-default seeupload ">
@@ -98,7 +99,7 @@ if(isset($_POST['submit']))
 					</div>
 					<div class="panel-heading">Upload File</div>
 					<div class="panel-body">
-						<p style="font-size:16px; color:red" align="center"> <?php if($msg){
+						<p style="font-size:16px; color:green" align="center"> <?php if($msg){
    					echo $msg;}  ?> </p>
   					<p style="font-size:16px; color:red" align="center"> <?php if($msg1){
    					echo $msg1;}  ?> </p>

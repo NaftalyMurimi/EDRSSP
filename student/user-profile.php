@@ -56,9 +56,9 @@ if (strlen($_SESSION['studentuid']==0)) {
 		
 		
 				
-		
-		<div class="row">
-			<div class="col-lg-12">
+		<div class="row ">
+            <div class="col-lg-12 ">
+        <hr/>
 			
 				
 				
