@@ -61,16 +61,17 @@ if (strlen($_SESSION['adminid']==0)) {
 				
     <div class="panel panel-default">
         <div class="panel panel-default">
-					<div class="panel-heading"><marquee>Welcome To Admin's Dashboard</marquee></div>
+					<div class="panel-heading"><marque>Welcome To Admin's Dashboard</marquee></div>
 
 					<div class="panel-body">
 						<h4>Here are a list of the tasks you can perform</h4>
 						<ul>
-							<li>Submit farm produce for selling</li>
-							<li> View  submitted profuce  </li>
+							<li>Manage system user (students and lecturers)</li>
+							<li> Activate user accounts  </li>
 							
 							
-							<li> Edit or delete farm produce  </li>
+							<li> View submitted projects  </li>
+							<li> Update personal profile </li>
 						</ul>
 					</div>
 	    </div>

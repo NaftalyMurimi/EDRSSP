@@ -7,7 +7,7 @@ $result = mysqli_query($con,"SELECT * FROM documents");
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Admin</title>
+    <title>Lecturer</title>
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/font-awesome.min.css" rel="stylesheet">
     <link href="../css/datepicker3.css" rel="stylesheet">
@@ -25,7 +25,7 @@ $result = mysqli_query($con,"SELECT * FROM documents");
                 <li><a href="#">
                     <em class="fa fa-home"></em>
                 </a></li>
-                <li class="active">Admin</li>
+                <li class="active">Lecturer</li>
             </ol>
         </div><!--/.row-->
     <div class="row ">

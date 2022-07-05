@@ -97,7 +97,7 @@ if(isset($_POST['submit']))
 				<div class="panel panel-default seeupload ">
 					<div class="rowupload">
 					</div>
-					<div class="panel-heading">Upload File</div>
+					<div class="panel-heading">Sample File Upload</div>
 					<div class="panel-body">
 						<p style="font-size:16px; color:green" align="center"> <?php if($msg){
    					echo $msg;}  ?> </p>

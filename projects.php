@@ -40,6 +40,7 @@ $res=mysqli_query($con,$sql) or die(mysqli_error($con));
 
 
 <div class="hold">
+<h4 class="text-center"> Sample Project documents</h4>
     <table class="table table-striped bg-white table-hover " style="margin-top: 20px;">
         <tr>
             <!-- <th>S No.</th> -->

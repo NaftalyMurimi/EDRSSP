@@ -51,7 +51,7 @@ $row= mysqli_fetch_array($result);
                 
     <div class="panel panel-default bg-info">
 
-     <form name="Myform" id="Myform" action="" method="post" >
+     <form name="Myform" id="Myform" action="" method="post">
  <input type="hidden" name="id"  value="<?php echo $row['id']; ?>">
     <div class="col-md-8">
     <label for="name" class="form-label">Author:</label>

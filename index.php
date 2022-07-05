@@ -30,7 +30,9 @@
             <div class="display-4">EDRSSP</div>
             <div class="display-6 text-muted">Student Document Repository</div>
           </h1>
-          <p class="lead my-4 text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, dignissimos?</p>
+          <p class="lead my-4 text-muted">EDRSSP is a document repository system that is aimed at helping students to submit their project documents for grading 
+            and they can also download sample projects posted by their supervisors.
+          </p>
           <a href="student/login.php" class="btn btn-secondary btn-lg">Student</a>
           <a href="lecturer/login.php" class="btn btn-info btn-lg">Lecturer</a>
         </div>
